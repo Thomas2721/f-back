@@ -1,4 +1,3 @@
-const SECRET_KEY = "your-secret-key"; // Replace this with a secure, long string
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 const isAuthenticated = async (request, response, next) => {
