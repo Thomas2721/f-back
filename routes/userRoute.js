@@ -31,9 +31,13 @@ router.post("/signup", async (request, response) => {
         { expiresIn: "1h" }
       );
 
-      await sendVerificationEmail(newUser.email, verificationToken);
-      console.log("Email function executed.");
-
+     
+   try {
+  await sendVerificationEmail(newUser.email, verificationToken);
+  console.log("Email sent successfully.");
+} catch (error) {
+  console.error("Error sending email:", error.message);
+}
       response.status(201).json({
         message:
           "User registered. Please verify your email to activate your account.",
