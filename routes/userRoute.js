@@ -27,7 +27,7 @@ router.post("/signup", async (request, response) => {
     if (newUser) {
       const verificationToken = jwt.sign(
         { id: newUser._id },
-        process.env.SECRET_KEY,
+        "thomas",
         { expiresIn: "1h" }
       );
 
