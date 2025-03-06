@@ -32,6 +32,7 @@ router.post("/signup", async (request, response) => {
       );
 
       await sendVerificationEmail(newUser.email, verificationToken);
+      console.log("Email function executed.");
 
       response.status(201).json({
         message:
